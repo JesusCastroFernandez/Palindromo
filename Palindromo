@@ -1,0 +1,19 @@
+public class Palindromo {
+    public static void main(String[] args) {
+        String[] textos = {"Reconocer", "AMANECER", "Esto no es un palindromo", "Dabale arroz a la zorra el abad.", 
+                           "A man, a plan, a canal: Panama.", "A man a plan and a canal, Panama.", "No deseo ese don..."};
+        boolean[] resultados = new boolean[textos.length];
+        for(int i=0; i<textos.length; i++){
+            System.out.println((i+1) + ". " + textos[i]);
+        }
+        for(int i=0; i<textos.length; i++){
+            String texto = textos[i].replaceAll("[^a-zA-Z]", "").toLowerCase();
+            StringBuilder reverso = new StringBuilder(texto).reverse();
+            resultados[i] = texto.equals(reverso.toString());
+        }
+        System.out.println();
+        for(int i=0; i<resultados.length; i++){
+            System.out.println((i+1) + ". " + resultados[i]);
+        }
+    }
+}
